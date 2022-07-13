@@ -1,0 +1,10 @@
+<%= simple_form_for @post do |p| %>
+  <%= p.input :title %>
+  <%= p.input :content %>
+  <select name="category" class="block">
+    <% @categories.each do |category| %>
+      <option value="<%=category.name%>"><%=category.name%></option>
+    <% end %>
+  </select>
+  <%= p.submit %>
+<% end %>

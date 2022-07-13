@@ -1,0 +1,23 @@
+<h1 class="text-center mt-3">Derniers posts</h1>
+
+<div class="flex justify-end">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Catégories
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <% @categories.each do |category| %>
+        <a class="dropdown-item" href="/?category=<%=category.id%>"><%=category.name%></a>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="posts container">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h2><%= post.title %></h2>
+      <h2><%= post.content %></h2>
+    </div>
+  <% end %>
+</div>

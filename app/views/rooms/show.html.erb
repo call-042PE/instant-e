@@ -1,0 +1,13 @@
+<div class="container text-center mt-3">
+  <%= @room_name %>
+  <% @room_users.each do |room_user| %>
+  <%= room_user.user.username %>
+  <% end %>
+</div>
+
+
+<div class="room-messages">
+<% @room_messages.each do |room_message| %>
+<%= "#{room_message.user.username}  #{room_message.content}" %>
+<% end %>
+</div>

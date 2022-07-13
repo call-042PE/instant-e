@@ -1,0 +1,16 @@
+<h1 class="text-center mt-3">Mes Posts</h1>
+
+<div class="text-center" data-controller="post">
+  <% @posts.each do |post|%>
+    <input hidden disabled value="<%=post.id%>" data-post-target="postid">
+    <div class="posts">
+      <div class="post">
+        <h3><%= post.title %></h3>
+        <a href="/post/<%=post.id%>/edit"><i class="fa-solid fa-pen"></i></a>
+        <i class="fa-solid fa-trash" data-action="click->post#delete"></i>
+        <br>
+        <%= post.content%>
+      </div>
+    </div>
+  <% end %>
+</div>
