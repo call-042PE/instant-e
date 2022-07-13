@@ -1,17 +1,22 @@
-<form method="POST">
+<form method="POST" data-controller="search">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <div>
     <label for="title">Titre de la discussion</label>
   </div>
   <div>
-    <input type="text" name="title" id="title">
+    <input type="text" name="room[name]" id="title">
+  </div>
+  <div class="discution-contact" data-search-target="adddiv">
+    <h2>Personne(s) dans cette conversation: </h2>
+  </div>
+  <input type="text" name="person" data-search-target="contactinput" hidden>
+  <div>
+    <label for="contact">Ajouter des personnes</label>
   </div>
   <div>
-    <label for="contact">Chercher des personnes </label>
+    <input type="text" name="search" id="contact" data-search-target="contact" data-action="input->search#search">
   </div>
-  <div>
-    <input type="text" name="person">
-  </div>
-  <div class="person">
+  <div class="person" data-search-target="person">
   </div>
   <div>
     <input type="submit">

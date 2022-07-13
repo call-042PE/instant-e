@@ -5,4 +5,8 @@
 import { application } from "./application"
 
 import PostController from "./post_controller"
+import SearchController from "./search_controller"
+import RoomController from "./room_controller"
 application.register("post", PostController)
+application.register("search", SearchController)
+application.register("room", RoomController)

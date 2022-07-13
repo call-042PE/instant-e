@@ -1,13 +1,22 @@
-<div class="container text-center mt-3">
-  <%= @room_name %>
-  <% @room_users.each do |room_user| %>
-  <%= room_user.user.username %>
-  <% end %>
-</div>
+<div class="controller" data-controller="room">
+  <input type="text" name="room[id]" id="room_id" value="<%=params[:id]%>" data-room-target="room" hidden>
+
+  <div class="container text-center mt-3">
+    <%= @room_name %>
+    <% @room_users.each do |room_user| %>
+      <%= room_user.user.username %>
+    <% end %>
+  </div>
 
 
-<div class="room-messages">
-<% @room_messages.each do |room_message| %>
-<%= "#{room_message.user.username}  #{room_message.content}" %>
-<% end %>
+  <div class="room-messages">
+    <h2>Messages</h2>
+    <div class="messages">
+    </div>
+  </div>
+
+  <form method="POST">
+    <input type="text" name="RoomMessage[content]" data-room-target="content">
+    <input type="submit" data-action="click->room#submit">
+  </form>
 </div>
