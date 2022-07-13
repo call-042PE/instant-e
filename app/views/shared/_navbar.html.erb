@@ -6,6 +6,7 @@
   <% if user_signed_in? %>
     <div class="justify-end">
       <a href="/users/posts" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Mes Posts</a>
+      <a href="/rooms" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Mes Discussion(s) (<%= get_unread_messages() %>)</a>
     </div>
   <% else %>
     <div class="justify-end">

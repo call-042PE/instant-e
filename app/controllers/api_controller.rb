@@ -28,4 +28,29 @@ class ApiController < ApplicationController
       end
     end
   end
+
+  def read_message
+    if params[:message_id]
+      @message = RoomMessage.find(params[:message_id])
+      if @message.user.id != current_user.id
+        @message.read = true
+        @message.save
+      end
+    end
+  end
+
+  def number_of_unread_messages
+    if params[:room_id]
+      @unread_messages = RoomMessage.where("room_id = '#{params[:room_id]}' AND read = false").count
+      render :json => @unread_messages
+    end
+  end
+
+  def has_unread_message
+    @rooms = RoomUser.where("user_id = '#{current_user.id}'")
+    @rooms.each do |room|
+      @unread_messages = RoomMessage.where("room_id = '#{room.room.id}' AND read = false").count
+      render :json => @unread_messages
+    end
+  end
 end
