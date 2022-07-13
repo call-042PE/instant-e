@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   get "/api/search", to: "api#person"
   get "/api/messages", to: "api#message"
   get "/api/addmessage", to: "api#add_message"
+  get "/api/readmessage", to: "api#read_message"
+  get "/api/countunreadmessage", to: "api#number_of_unread_messages"
+  get "/api/unread", to: "api#has_unread_message"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

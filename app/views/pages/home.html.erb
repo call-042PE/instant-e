@@ -3,7 +3,7 @@
 <div class="flex justify-end">
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Catégories
+      Trier par Catégories: <%= params[:category] ? Category.find(params[:category]).name : "Toutes"%>
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <% @categories.each do |category| %>
