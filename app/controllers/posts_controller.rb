@@ -40,6 +40,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post_title = Post.find(params[:id]).title
+    @post_content = Post.find(params[:id]).content
+  end
+
   private
 
   def post_params

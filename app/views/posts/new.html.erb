@@ -1,10 +1,12 @@
-<%= simple_form_for @post do |p| %>
-  <%= p.input :title %>
-  <%= p.input :content %>
-  <select name="category" class="block">
-    <% @categories.each do |category| %>
-      <option value="<%=category.name%>"><%=category.name%></option>
-    <% end %>
-  </select>
-  <%= p.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @post, html: { class: "mt-5"} do |p| %>
+    <%= p.input :title, label: false, placeholder: "Titre" %>
+    <%= p.input :content, label: false, placeholder: "Contenue"%>
+    <select name="category" class="category block">
+      <% @categories.each do |category| %>
+        <option value="<%=category.name%>"><%=category.name%></option>
+      <% end %>
+    </select>
+    <%= p.submit "Créer le post", { class: 'btn btn-success mt-5 text-white'}  %>
+  <% end %>
+</div>

@@ -1,22 +1,29 @@
 <div class="controller" data-controller="room">
   <input type="text" name="room[id]" id="room_id" value="<%=params[:id]%>" data-room-target="room" hidden>
+  <input type="text" name="user[username]" id="username" value="<%=current_user.username%>" hidden>
 
-  <div class="container text-center mt-3">
-    <%= @room_name %>
+  <div class="container flex justify-center mt-3">
+    <h2 class="font-bold mr-3"><%= "#{@room_name}" %></h2>
+  </div>
+
+  <div class="container flex justify-center mt-3">
     <% @room_users.each do |room_user| %>
-      <%= room_user.user.username %>
+      <% if @room_users.last.user.username == room_user.user.username %>
+        <p style="color: #757575;"><%= "#{room_user.user.username}" %></p>
+      <% else %>
+        <p style="color: #757575;"><%= "#{room_user.user.username}," %></p>
+      <% end %>
     <% end %>
   </div>
 
 
   <div class="room-messages">
-    <h2>Messages</h2>
     <div class="messages">
     </div>
   </div>
 
   <form method="POST">
-    <input type="text" name="RoomMessage[content]" data-room-target="content">
-    <input type="submit" data-action="click->room#submit">
+    <input type="text" style="width: 90%" name="RoomMessage[content]" data-room-target="content" placeholder="Message dans <%=@room_name%>">
+    <input type="submit" class="btn btn-success" data-action="click->room#submit">
   </form>
 </div>

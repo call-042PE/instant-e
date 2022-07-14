@@ -1,0 +1,9 @@
+.post-option {
+  i {
+    font-size: calc(1.325rem + 0.9vw);
+    &:hover {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.438);
+    }
+  }
+}

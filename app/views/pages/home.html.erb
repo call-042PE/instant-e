@@ -1,23 +1,31 @@
-<h1 class="text-center mt-3">Derniers posts</h1>
+<div class="container">
 
-<div class="flex justify-end">
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Trier par Catégories: <%= params[:category] ? Category.find(params[:category]).name : "Toutes"%>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% @categories.each do |category| %>
-        <a class="dropdown-item" href="/?category=<%=category.id%>"><%=category.name%></a>
-      <% end %>
+  <div class="flex justify-between main-home">
+    <div class="mt-10">
+      <h2>Derniers Posts</h2>
+    </div>
+
+    <div class="mt-10">
+      <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Trier par Catégories: <%= params[:category] ? Category.find(params[:category]).name : "Toutes"%>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% @categories.each do |category| %>
+            <a class="dropdown-item" href="/?category=<%=category.id%>"><%=category.name%></a>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="posts container">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <h2><%= post.title %></h2>
-      <h2><%= post.content %></h2>
-    </div>
-  <% end %>
+  <div class="posts container">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <a href="/posts/<%=post.id%>"><%= post.title %></a>
+        <p><%= post.content %></p>
+        <p class="flex justify-end">Par - <%= post.user.username %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
