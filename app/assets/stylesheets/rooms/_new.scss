@@ -1,0 +1,70 @@
+.new-discussion {
+  margin-top: 20px;
+  input {
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 20%;
+  }
+}
+
+.contact {
+  color: white;
+  background-color: #1EDD88;
+  border-color: #1EDD88;
+  width:8%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 10px;
+  i {
+    margin-left: 20px;
+    &:hover {
+      cursor: pointer;
+      color: rgb(217, 217, 217);
+    }
+  }
+  h4 {
+    margin-left: 10px;
+    margin-top: 6px;
+    font-weight: 300;
+    font-size: 15px;
+  }
+}
+
+.person {
+  margin-top: 10px;
+  display: flex;
+  .add-contact {
+    padding-left: 4px;
+    padding-right: 4px;
+    box-shadow: #1e84dd3c 0px 7px 29px 0px;
+    border: 2px solid #1e84dd;
+    border-radius: 5px;
+    color: white;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    background-color: #1e84dd5c;
+    padding-top: 5px;
+    margin-right: 10px;
+    i {
+      margin-left: 20px;
+      &:hover {
+        cursor: pointer;
+        color: rgb(217, 217, 217);
+      }
+    }
+    h4 {
+      margin-top: 6px;
+      font-weight: 300;
+      font-size: 15px;
+    }
+  }
+}
+
+.discution-contact {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}

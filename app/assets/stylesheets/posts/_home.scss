@@ -1,0 +1,22 @@
+.post {
+  border-bottom: 1px solid rgb(206, 206, 206);
+  a {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: calc(1.325rem + 0.9vw);
+    &:hover {
+      color: rgba(0, 0, 0, 0.608);
+    }
+  }
+  p {
+    color: rgba(117, 117, 117, 1);
+    font-size: 16px;
+  }
+}
+
+.main-home {
+  h2 {
+    font-weight: bold;
+  }
+}

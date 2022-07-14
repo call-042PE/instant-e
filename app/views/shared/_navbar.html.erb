@@ -4,12 +4,12 @@
   <a href="/rooms/new">Commencer une discussion</a>
   <a href="/posts/new">Créer un post</a>
   <% if user_signed_in? %>
-    <div class="justify-end">
+    <div class="user-btn justify-end">
       <a href="/users/posts" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Mes Posts</a>
       <a href="/rooms" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Mes Discussion(s) (<%= get_unread_messages() %>)</a>
     </div>
   <% else %>
-    <div class="justify-end">
+    <div class="user-btn justify-end">
       <a href="/users/sign_in">Connectez-Vous</a>
       <a href="/users/sign_up" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Inscrivez-Vous</a>
     </div>

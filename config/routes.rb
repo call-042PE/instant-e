@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "posts/new", to: "posts#new"
   post "/posts", to: "posts#create"
   get "/posts", to: "posts#index"
+  get "/posts/:id", to: "posts#show"
   get "/post/:id/delete", to: "posts#delete"
   get "/post/:id/edit", to: "posts#edit"
   post "/post/:id/edit", to: "posts#update"
@@ -20,5 +21,6 @@ Rails.application.routes.draw do
   get "/api/readmessage", to: "api#read_message"
   get "/api/countunreadmessage", to: "api#number_of_unread_messages"
   get "/api/unread", to: "api#has_unread_message"
+  get "/api/userinfo", to: "api#user_info"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

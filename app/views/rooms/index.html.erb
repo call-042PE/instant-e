@@ -1,0 +1,26 @@
+<div class="container mt-3">
+  <div class="mb-3">
+    <h2 class="font-bold">Mes Discussion(s) (<%= get_unread_messages() %>)</h2>
+  </div>
+  <div class="rooms">
+    <% @rooms.each do |room| %>
+      <div class="room">
+        <div>
+          <a href="/rooms/<%=room.id%>"><%= room.name %></h3></a>
+        </div>
+        <div class="flex">
+          <p class="mr-1">Participant(s): </p>
+          <% @rooms_users.each do |room_user| %>
+            <% if room_user.room.id == room.id %>
+              <% if @rooms_users.last.user.username == room_user.user.username %>
+                <%= "#{room_user.user.username}" %>
+              <% else %>
+                <%= "#{room_user.user.username}," %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
