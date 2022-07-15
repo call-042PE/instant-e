@@ -15,3 +15,42 @@
     </div>
   <% end %>
 </div>
+
+<div class="container navbar-phone static mt-2 text-lg" data-controller="menu">
+  <i class="fa-solid fa-bars" data-menu-target="menu" data-action="click->menu#menu" style="font-size: 30px;"></i>
+  <i class="fa-solid fa-xmark hidden" data-action="click->menu#exit" data-menu-target="exit" style="font-size: 30px; margin-right: 20px;"></i>
+</div>
+
+<div class="menu-phone hidden">
+  <div>
+    <a href="/">Accueil</a>
+  </div>
+  <div>
+    <a href="/search">Recherche</a>
+  </div>
+  <div>
+    <a href="/rooms/new">Commencer une discussion</a>
+  </div>
+  <div>
+    <a href="/posts/new">Créer un post</a>
+  </div>
+  <% if user_signed_in? %>
+  <div class="user-btn justify-end" style="margin: 0px;">
+    <div>
+      <a href="/users/posts" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Mes Posts</a>
+    </div>
+    <div>
+      <a href="/rooms" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Mes Discussion(s) (<%= get_unread_messages() %>)</a>
+    </div>
+  </div>
+<% else %>
+  <div class="user-btn justify-end" style="margin: 0px;">
+    <div>
+      <a href="/users/sign_in">Connectez-Vous</a>
+    </div>
+    <div>
+      <a href="/users/sign_up" class="sign-btn bg-emerald-600 p-2.5 rounded-md">Inscrivez-Vous</a>
+    </div>
+  </div>
+<% end %>
+</div>

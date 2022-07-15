@@ -68,3 +68,15 @@
   margin-top: 10px;
   margin-bottom: 50px;
 }
+
+@media (max-width: 1000px) {
+  .new-discussion {
+    input[type=submit] {
+      width: 30% !important;
+    }
+    input {
+      width: 100% !important;
+    }
+  }
+
+}
