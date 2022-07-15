@@ -1,3 +1,15 @@
+@media(min-width: 1001px) {
+  input[type=text] {
+    width: 90%;
+  }
+}
+
+@media(max-width: 1000px) {
+  input[type=text] {
+    width: 70%;
+  }
+}
+
 .othermessages {
   padding: 10px;
   background-color: rgb(32, 207, 157);

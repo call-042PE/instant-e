@@ -15,8 +15,18 @@
   }
 }
 
-.main-home {
-  h2 {
-    font-weight: bold;
+@media ( min-width : 1001px ) {
+  .main-home {
+    h2 {
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .main-home {
+    h2 {
+      display: none;
+    }
   }
 }

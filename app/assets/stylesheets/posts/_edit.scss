@@ -1,9 +1,25 @@
-.editpost {
-  input {
-    width: 100%;
+@media(min-width: 1001px) {
+  .editpost {
+    input {
+      width: 100%;
+    }
+    input[type=submit] {
+      width: 10%;
+      color: white;
+    }
   }
-  input[type=submit] {
-    width: 10%;
-    color: white;
+
+}
+
+@media(max-width: 1000px) {
+  .editpost {
+    input {
+      width: 100%;
+    }
+    input[type=submit] {
+      width: 30%;
+      color: white;
+    }
   }
+
 }
