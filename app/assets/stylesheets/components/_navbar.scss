@@ -29,11 +29,14 @@
       color: white;
     }
   }
+  .navbar-phone {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1000px) {
   .navbar {
-    display: none;
+    display: none !important;
   }
   .navbar-phone {
     display: flex;
